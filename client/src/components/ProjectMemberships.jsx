@@ -1,4 +1,4 @@
-jsx
+
 // Import React hooks
 import { useEffect, useState } from "react";
 
