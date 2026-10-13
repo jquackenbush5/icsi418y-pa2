@@ -1,90 +1,437 @@
+
+/* Main application layout */
 .app {
-width: 100%;
-max-width: 500px;
-margin: 0 auto;
-padding: 50px 20px;
-box-sizing: border-box;
+  width: 100%;
+  max-width: 1126px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  box-sizing: border-box;
+  text-align: left;
 }
 
-.app h1 {
-text-align: center;
-margin-bottom: 30px;
+.app-header {
+  text-align: center;
+  margin-bottom: 28px;
 }
 
+.app-header h1 {
+  margin: 0 0 10px;
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+}
+
+.app-subtitle {
+  color: var(--text);
+  margin: 0;
+}
+
+.page-content {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Main navigation */
 .switch-buttons {
-display: flex;
-justify-content: center;
-gap: 10px;
-margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
 }
 
 .switch-buttons button {
-padding: 10px 20px;
-border: 1px solid var(--border);
-border-radius: 6px;
-background: var(--code-bg);
-color: var(--text-h);
-cursor: pointer;
-font-size: 16px;
+  padding: 10px 18px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--code-bg);
+  color: var(--text-h);
+  cursor: pointer;
+  font: inherit;
+  font-size: 15px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.switch-buttons button:hover {
+  border-color: var(--accent);
 }
 
 .switch-buttons button.active {
-background: var(--accent);
-color: white;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
 }
 
+/* Existing account forms */
 .form-container {
-border: 1px solid var(--border);
-border-radius: 10px;
-padding: 30px;
-text-align: left;
-box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px;
+  text-align: left;
+  box-shadow: var(--shadow);
+  background: var(--bg);
 }
 
 .form-container h2 {
-text-align: center;
-margin-bottom: 25px;
+  text-align: center;
+  margin-bottom: 25px;
 }
 
 .form-group {
-margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .form-group label {
-display: block;
-margin-bottom: 7px;
-color: var(--text-h);
-font-weight: 500;
+  display: block;
+  margin-bottom: 7px;
+  color: var(--text-h);
+  font-weight: 600;
+  font-size: 15px;
 }
 
-.form-group input {
-width: 100%;
-padding: 10px;
-box-sizing: border-box;
-border: 1px solid var(--border);
-border-radius: 5px;
-background: var(--bg);
-color: var(--text-h);
-font-size: 16px;
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 11px 12px;
+  box-sizing: border-box;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--bg);
+  color: var(--text-h);
+  font: inherit;
+  font-size: 15px;
 }
 
-.form-container form button {
-width: 100%;
-padding: 11px;
-border: none;
-border-radius: 5px;
-background: var(--accent);
-color: white;
-font-size: 16px;
-cursor: pointer;
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: 2px solid var(--accent-border);
+  outline-offset: 1px;
 }
 
-.form-container form button:hover {
-opacity: 0.9;
+.form-group textarea {
+  resize: vertical;
 }
 
-.message {
-margin-top: 20px;
-text-align: center;
-color: var(--text-h);
+.form-container form button,
+.feature-page form button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 7px;
+  background: var(--accent);
+  color: white;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form-container form button:hover,
+.feature-page form button:hover {
+  opacity: 0.9;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Project and membership pages */
+.feature-page {
+  width: 100%;
+}
+
+.page-heading {
+  margin-bottom: 24px;
+}
+
+.page-heading h2 {
+  margin-bottom: 8px;
+}
+
+.page-heading p {
+  color: var(--text);
+}
+
+.content-card {
+  padding: 24px;
+  margin-bottom: 30px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+}
+
+.content-card > h3 {
+  margin: 0 0 22px;
+}
+
+.content-card form {
+  max-width: 760px;
+}
+
+.content-card form button {
+  margin-top: 4px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 28px 0 16px;
+}
+
+.section-heading h3 {
+  margin: 0;
+}
+
+.secondary-button {
+  padding: 9px 14px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--code-bg);
+  color: var(--text-h);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.secondary-button:hover {
+  border-color: var(--accent);
+}
+
+/* Project cards */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr));
+  gap: 18px;
+}
+
+.project-card {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+}
+
+.project-card-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.project-card-heading h3 {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.project-description {
+  margin-bottom: 18px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.project-lead {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.project-id {
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+/* Status labels */
+.status-badge,
+.lead-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.status-planning {
+  background: var(--code-bg);
+  color: var(--text-h);
+}
+
+.status-active {
+  background: #dcfce7;
+  color: #166534;
+  border-color: #86efac;
+}
+
+.status-completed {
+  background: #dbeafe;
+  color: #1e40af;
+  border-color: #93c5fd;
+}
+
+/* Membership interface */
+.selected-project {
+  padding: 18px;
+  margin: 10px 0 24px;
+  border-radius: 9px;
+  background: var(--code-bg);
+}
+
+.selected-project h3 {
+  margin: 0 0 8px;
+  overflow-wrap: anywhere;
+}
+
+.selected-project p {
+  margin-bottom: 12px;
+}
+
+.add-member-form {
+  border-top: 1px solid var(--border);
+  padding-top: 22px;
+}
+
+.member-list {
+  display: grid;
+  gap: 12px;
+}
+
+.member-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px 20px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
+}
+
+.member-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.member-details strong {
+  color: var(--text-h);
+  overflow-wrap: anywhere;
+}
+
+.member-username {
+  color: var(--text);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.member-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lead-badge {
+  background: var(--accent-bg);
+  border-color: var(--accent-border);
+  color: var(--text-h);
+}
+
+.danger-button {
+  padding: 8px 12px;
+  border: 1px solid #ef4444;
+  border-radius: 7px;
+  background: transparent;
+  color: #dc2626;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.danger-button:hover {
+  background: #fee2e2;
+}
+
+/* Success, error, and empty-state messages */
+.notice {
+  padding: 12px 15px;
+  margin: 14px 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.notice.success {
+  border-color: #86efac;
+  background: #dcfce7;
+  color: #166534;
+}
+
+.notice.error {
+  border-color: #fca5a5;
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.empty-state {
+  padding: 24px;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  text-align: center;
+}
+
+/* Footer */
+.app-footer {
+  padding: 28px 0 8px;
+  color: var(--text);
+  text-align: center;
+  font-size: 13px;
+}
+
+/* Responsive layout */
+@media (max-width: 640px) {
+  .app {
+    padding: 22px 14px;
+  }
+
+  .switch-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .switch-buttons button {
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+
+  .content-card,
+  .form-container {
+    padding: 18px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+  }
+
+  .member-card {
+    align-items: flex-start;
+  }
 }
