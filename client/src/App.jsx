@@ -5,6 +5,7 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Projects from "./components/Projects";
 import ProjectMemberships from "./components/ProjectMemberships";
+import UserStories from "./components/UserStories";
 
 import "./App.css";
 
@@ -18,6 +19,7 @@ function App() {
     { id: "login", label: "Log In" },
     { id: "projects", label: "Projects" },
     { id: "memberships", label: "Project Memberships" },
+    { id: "stories", label: "User Stories" },
   ];
 
   // Display the component associated with the selected navigation option.
@@ -35,6 +37,9 @@ function App() {
       case "memberships":
         return <ProjectMemberships />;
 
+      case "stories":
+        return <UserStories />;
+
       default:
         return <Signup />;
     }
@@ -45,7 +50,7 @@ function App() {
       <header className="app-header">
         <h1>Project Management</h1>
         <p className="app-subtitle">
-          Manage your account, projects, and project memberships.
+          Manage your account, projects, memberships, and user stories.
         </p>
       </header>
 
@@ -66,7 +71,7 @@ function App() {
       <div className="page-content">{renderPage()}</div>
 
       <footer className="app-footer">
-        <p>PA3 — Projects and Project Memberships</p>
+        <p>PA4 — Projects, Project Memberships, and User Stories</p>
       </footer>
     </main>
   );

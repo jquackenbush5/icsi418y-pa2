@@ -435,3 +435,166 @@ button:disabled {
     align-items: flex-start;
   }
 }
+
+
+/* 
+   User Stories and Project Backlog
+ */
+
+/* Default status shown when creating a new story */
+.story-default-status {
+  padding: 11px 12px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--code-bg);
+  color: var(--text-h);
+  font-size: 14px;
+}
+
+/* Buttons at the bottom of the story form */
+.story-form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.story-form-actions button {
+  flex: 1;
+}
+
+/* Backlog list */
+.story-list {
+  display: grid;
+  gap: 16px;
+}
+
+/* Individual story card */
+.story-card {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+}
+
+/* Story title and badges */
+.story-card-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.story-card-heading h4 {
+  margin: 0;
+  color: var(--text-h);
+  font-size: 17px;
+  overflow-wrap: anywhere;
+}
+
+/* Priority and status badges */
+.story-badges {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.priority-badge,
+.story-status-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Story priority colors */
+.priority-high {
+  background: #fee2e2;
+  border-color: #fca5a5;
+  color: #991b1b;
+}
+
+.priority-medium {
+  background: #fef3c7;
+  border-color: #fcd34d;
+  color: #92400e;
+}
+
+.priority-low {
+  background: #dcfce7;
+  border-color: #86efac;
+  color: #166534;
+}
+
+/* Story status colors */
+.story-status-to-do {
+  background: var(--code-bg);
+  color: var(--text-h);
+}
+
+.story-status-in-progress {
+  background: #dbeafe;
+  border-color: #93c5fd;
+  color: #1e40af;
+}
+
+.story-status-done {
+  background: #dcfce7;
+  border-color: #86efac;
+  color: #166534;
+}
+
+/* Story description */
+.story-description {
+  margin: 12px 0;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+/* Assigned member information */
+.story-assignee {
+  margin: 12px 0;
+  color: var(--text);
+  font-size: 14px;
+}
+
+/* Edit and Delete buttons */
+.story-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+/* Responsive story layout */
+@media (max-width: 640px) {
+  .story-card {
+    padding: 16px;
+  }
+
+  .story-card-heading {
+    flex-direction: column;
+  }
+
+  .story-form-actions {
+    flex-direction: column;
+  }
+
+  .story-actions {
+    flex-direction: column;
+  }
+
+  .story-actions button {
+    width: 100%;
+  }
+}
