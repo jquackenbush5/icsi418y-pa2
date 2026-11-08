@@ -1,7 +1,6 @@
 
 import { useEffect, useState } from "react";
 
-// Base URL for the Express backend.
 const API_URL = "http://localhost:9000";
 
 // Available story priorities.
@@ -33,7 +32,7 @@ function UserStories() {
   const [error, setError] = useState("");
 
   // Track which story is currently being edited.
-  // An empty string means the form is creating a new story.
+  // An empty string denotes that the form is creating a new story.
   const [editingStoryId, setEditingStoryId] = useState("");
 
   // Form fields shared by the create and edit forms.
@@ -127,8 +126,6 @@ function UserStories() {
 
   // Load stories and members whenever the selected project changes.
   useEffect(() => {
-    // Each effect instance has its own cancellation flag.
-    // This prevents an older project's response from replacing newer data.
     let cancelled = false;
 
     async function loadProjectData() {
@@ -258,7 +255,6 @@ function UserStories() {
         priority,
 
         // An empty dropdown selection means Unassigned.
-        // The backend expects null rather than an empty string.
         assigned_user_id: assignedUserId || null,
       };
 
@@ -623,7 +619,7 @@ function UserStories() {
                 </div>
               </div>
 
-              {/* Keep the complete description accessible in the backlog. */}
+              {/* Keep the complete description in the backlog. */}
               <p className="story-description">{story.description}</p>
 
               <p className="story-assignee">

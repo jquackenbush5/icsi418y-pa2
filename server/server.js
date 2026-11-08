@@ -604,7 +604,7 @@ app.delete(
         });
       }
 
-// PA4 Rule: Check for assigned user stories
+// Check for assigned user stories
 
 // Confirm that user is actually a member
 // of the selected project.
@@ -691,7 +691,7 @@ app.get("/projects/:id/stories", async (req, res) => {
       });
     }
 
-    // Retrieve ALL stories belonging to this project.
+    // Retrieve all stories belonging to this project.
     // This includes To Do, In Progress,
     // and Done stories.
     const stories = await userStories
